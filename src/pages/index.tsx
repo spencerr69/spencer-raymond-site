@@ -13,5 +13,19 @@ const IndexPage = () => {
 export default IndexPage;
 
 export function Head() {
-	return <title>Spencer Raymond</title>;
+	return (
+		<>
+			<meta
+				name='description'
+				content='Official Website for Spencer Raymond | Spencer Raymond is a Pop act from Melbourne, Australia.'
+			/>
+			<meta name='twitter:card' content='summary' />
+			<meta name='twitter:site' content='spencerr69' />
+			<meta name='twitter:title' content='Spencer Raymond' />
+			<meta
+				name='twitter:description'
+				content='Official Website for Spencer Raymond | Spencer Raymond is a Pop act from Melbourne, Australia.'></meta>
+			<title>Spencer Raymond</title>
+		</>
+	);
 }
