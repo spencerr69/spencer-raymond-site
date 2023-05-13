@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.splash-container {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.splash-text {
+	font-size: 6rem;
+	color: #000;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+
+h1.splash-text {
+	font-weight: 900;
+}
+
+p.splash-text {
+	font-size: 3rem;
+	font-weight: 100;
+}
