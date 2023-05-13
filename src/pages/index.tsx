@@ -11,3 +11,7 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export function Head() {
+	return <title>Spencer Raymond</title>;
+}
