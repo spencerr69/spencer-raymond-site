@@ -3,6 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import '../styles/index.css';
 import favicon from '../images/favicon.png';
 import DB from '../images/deepBreaths.jpg';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 const description =
 	'Official Website for Spencer Raymond | Spencer Raymond is an Indie-Pop artist from Melbourne, Australia.';
@@ -177,46 +178,46 @@ const IndexPage = () => {
 						<div className='titleBar'>
 							<h1>Spencer Raymond</h1>
 							<p className='socialLinks'>
-								<a
+								<OutboundLink
 									href='https://twitter.com/spencerr69'
 									className='social'>
 									Twitter
-								</a>{' '}
+								</OutboundLink>{' '}
 								|{' '}
-								<a
+								<OutboundLink
 									href='https://instagram.com/spencerr69420'
 									className='social'>
 									Instagram
-								</a>{' '}
+								</OutboundLink>{' '}
 								|{' '}
-								<a
+								<OutboundLink
 									href='https://tiktok.com/@spencerr69420'
 									className='social'>
 									TikTok
-								</a>{' '}
+								</OutboundLink>{' '}
 								|{' '}
-								<a
+								<OutboundLink
 									href='https://spencerr69.bandcamp.com'
 									className='social'>
 									Bandcamp
-								</a>{' '}
+								</OutboundLink>{' '}
 								|{' '}
-								<a
+								<OutboundLink
 									href='https://open.spotify.com/artist/5DwfLPci515faDoJaZDOep'
 									className='social'>
 									Spotify
-								</a>{' '}
+								</OutboundLink>{' '}
 								|{' '}
-								<a
+								<OutboundLink
 									href='https://music.apple.com/us/artist/spencer-raymond/1667133405'
 									className='social'>
 									Apple Music
-								</a>
+								</OutboundLink>
 							</p>
 						</div>
 
 						<ListItem itemID={0} stateFunc={setCurrentSelection}>
-							<a
+							<OutboundLink
 								className='listLink'
 								href='https://ffm.to/srdeepbreaths'>
 								Deep Breaths
@@ -224,10 +225,10 @@ const IndexPage = () => {
 								<span className='italics listLink'>
 									5th of January, 2024
 								</span>
-							</a>
+							</OutboundLink>
 						</ListItem>
 						<ListItem itemID={1} stateFunc={setCurrentSelection}>
-							<a
+							<OutboundLink
 								className='listLink'
 								href='https://ffm.to/srdeserveit'>
 								DESERVE IT
@@ -235,7 +236,7 @@ const IndexPage = () => {
 								<span className='italics listLink'>
 									3rd of February, 2023
 								</span>
-							</a>
+							</OutboundLink>
 						</ListItem>
 					</div>
 				</div>
