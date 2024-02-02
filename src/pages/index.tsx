@@ -88,6 +88,10 @@ const IndexPage = () => {
 		layerOne: React.useRef(null),
 		layerTwo: React.useRef(null),
 	};
+	const bcfRefs: any = {
+		layerOne: React.useRef(null),
+		layerTwo: React.useRef(null),
+	};
 
 	const mouseMoveHandle = (e: any) => {
 		if (!responsive.isMobile) {
@@ -118,6 +122,18 @@ const IndexPage = () => {
 				'%) translateY(-' +
 				(2.5 + pageY / 500) +
 				'%)';
+			bcfRefs.layerOne.current.style.transform =
+				'translateX(-' +
+				(2.5 + pageX / 200) +
+				'%) translateY(-' +
+				(2.5 + pageY / 200) +
+				'%)';
+			bcfRefs.layerTwo.current.style.transform =
+				'translateX(-' +
+				(2.5 + pageX / 500) +
+				'%) translateY(-' +
+				(2.5 + pageY / 500) +
+				'%)';
 			layerFour.current.style.transform =
 				'translateX(-' +
 				(2.5 + pageX / 1000) +
@@ -128,45 +144,6 @@ const IndexPage = () => {
 	};
 
 	let layerFour: any = React.useRef(null);
-
-	const Shows: JSX.Element[] = [
-		<div>
-			<h3
-				id='layer-1'
-				ref={deepBreathsRefs.layerOne}
-				className='showText'>
-				Deep Breaths
-			</h3>
-			<div ref={deepBreathsRefs.layerTwo}>
-				<StaticImage
-					src='../images/deepBreaths.jpg'
-					alt='Deep Breaths Artwork'
-					placeholder='blurred'
-					width={1000}
-					height={1000}
-					className='showImage'
-					imgStyle={{ zIndex: 0 }}
-				/>
-			</div>
-		</div>,
-		<div>
-			<h3 id='layer-1' className='showText' ref={deserveItRefs.layerOne}>
-				DESERVE IT
-			</h3>
-			<div ref={deserveItRefs.layerTwo}>
-				<StaticImage
-					src='../images/deserveIt.png'
-					alt='DESERVE IT Artwork'
-					placeholder='blurred'
-					width={1000}
-					height={1000}
-					className='showImage'
-					imgStyle={{ zIndex: 0 }}
-					id='layer-2'
-				/>
-			</div>
-		</div>,
-	];
 
 	return (
 		<>
@@ -216,7 +193,18 @@ const IndexPage = () => {
 							</p>
 						</div>
 
-						<ListItem itemID={0} stateFunc={setCurrentSelection}>
+						<ListItem itemID={2} stateFunc={setCurrentSelection}>
+							<OutboundLink
+								className='listLink'
+								href='https://spencerr69.bandcamp.com/album/bandcamp-friday-pack'>
+								Bandcamp Friday Pack
+								<br />
+								<span className='italics listLink'>
+									2nd of February, 2024
+								</span>
+							</OutboundLink>
+						</ListItem>
+						<ListItem itemID={1} stateFunc={setCurrentSelection}>
 							<OutboundLink
 								className='listLink'
 								href='https://ffm.to/srdeepbreaths'>
@@ -227,7 +215,7 @@ const IndexPage = () => {
 								</span>
 							</OutboundLink>
 						</ListItem>
-						<ListItem itemID={1} stateFunc={setCurrentSelection}>
+						<ListItem itemID={0} stateFunc={setCurrentSelection}>
 							<OutboundLink
 								className='listLink'
 								href='https://ffm.to/srdeserveit'>
@@ -250,8 +238,8 @@ const IndexPage = () => {
 									style={{
 										display:
 											currentSelection == 1
-												? 'none'
-												: 'block',
+												? 'block'
+												: 'none',
 									}}>
 									<h3
 										id='layer-1'
@@ -277,8 +265,8 @@ const IndexPage = () => {
 									style={{
 										display:
 											currentSelection == 0
-												? 'none'
-												: 'block',
+												? 'block'
+												: 'none',
 									}}>
 									<h3
 										id='layer-1'
@@ -295,6 +283,39 @@ const IndexPage = () => {
 											height={1000}
 											className='showImage'
 											imgStyle={{ zIndex: 0 }}
+											id='layer-2'
+										/>
+									</div>
+								</div>
+								<div
+									style={{
+										display:
+											currentSelection == 2
+												? 'block'
+												: 'none',
+									}}>
+									<div
+										style={{
+											zIndex: 500,
+											position: 'absolute',
+										}}>
+										<h3
+											id='layer-1'
+											className='showText'
+											ref={bcfRefs.layerOne}>
+											Bandcamp Friday <br />
+											Pack
+										</h3>
+									</div>
+									<div ref={bcfRefs.layerTwo}>
+										<StaticImage
+											src='../images/BCF.jpg'
+											alt='Bandcamp Friday Pack Artwork'
+											placeholder='blurred'
+											width={1000}
+											height={1000}
+											className='showImage'
+											imgStyle={{ zIndex: -100 }}
 											id='layer-2'
 										/>
 									</div>
