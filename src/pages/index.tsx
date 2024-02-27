@@ -63,8 +63,8 @@ const ListItem = (props: {
 
 const IndexPage = () => {
 	const [currentSelection, setCurrentSelection] = useState(0);
-
 	const [width, setWindowWidth] = useState(0);
+
 	React.useEffect(() => {
 		updateDimensions();
 
@@ -146,7 +146,7 @@ const IndexPage = () => {
 	let layerFour: any = React.useRef(null);
 
 	return (
-		<>
+		<main>
 			<div
 				className='splashBG splashContainer'
 				onMouseMove={(e) => mouseMoveHandle(e)}>
@@ -325,7 +325,7 @@ const IndexPage = () => {
 					</div>
 				)}
 			</div>
-		</>
+		</main>
 	);
 };
 
