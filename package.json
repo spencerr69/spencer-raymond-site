@@ -16,20 +16,20 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"gatsby": "^5.9.1",
+		"gatsby": "^5.13.3",
 		"gatsby-plugin-google-gtag": "^5.13.1",
 		"gatsby-plugin-image": "^3.13.1",
 		"gatsby-plugin-sharp": "^5.13.1",
 		"gatsby-source-filesystem": "^5.13.1",
-		"react": "^18.1.0",
-		"react-dom": "^18.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"react-responsive": "^9.0.2",
 		"sharp": "^0.33.2"
 	},
 	"devDependencies": {
-		"@types/node": "^17.0.40",
-		"@types/react": "^18.2.6",
-		"@types/react-dom": "^18.0.5",
-		"typescript": "^4.7.3"
+		"@types/node": "^20.11.24",
+		"@types/react": "^18.2.61",
+		"@types/react-dom": "^18.2.19",
+		"typescript": "^5.3.3"
 	}
 }
