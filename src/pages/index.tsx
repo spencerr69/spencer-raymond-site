@@ -80,39 +80,27 @@ const IndexPage = () => {
     isMobile: width < 800,
   };
 
-  const deepBreathsRefs: any = {
+  const Refs: any = {
     layerOne: React.useRef(null),
     layerTwo: React.useRef(null),
   };
-  const deserveItRefs: any = {
-    layerOne: React.useRef(null),
-    layerTwo: React.useRef(null),
-  };
+  // const deserveItRefs: any = {
+  //   layerOne: React.useRef(null),
+  //   layerTwo: React.useRef(null),
+  // };
 
   const mouseMoveHandle = (e: any) => {
     if (!responsive.isMobile) {
-      var pageX = e.clientX - window.innerWidth / 2,
+      const pageX = e.clientX - window.innerWidth / 2,
         pageY = e.clientY - window.innerHeight / 2;
 
-      deepBreathsRefs.layerOne.current.style.transform =
+      Refs.layerOne.current.style.transform =
         "translateX(-" +
         (2.5 + pageX / 200) +
         "%) translateY(-" +
         (2.5 + pageY / 200) +
         "%)";
-      deepBreathsRefs.layerTwo.current.style.transform =
-        "translateX(-" +
-        (2.5 + pageX / 500) +
-        "%) translateY(-" +
-        (2.5 + pageY / 500) +
-        "%)";
-      deserveItRefs.layerOne.current.style.transform =
-        "translateX(-" +
-        (2.5 + pageX / 200) +
-        "%) translateY(-" +
-        (2.5 + pageY / 200) +
-        "%)";
-      deserveItRefs.layerTwo.current.style.transform =
+      Refs.layerTwo.current.style.transform =
         "translateX(-" +
         (2.5 + pageX / 500) +
         "%) translateY(-" +
@@ -190,23 +178,20 @@ const IndexPage = () => {
             </div>
 
             <ListItem itemID={1} stateFunc={setCurrentSelection}>
-              <OutboundLink
-                className="listLink"
-                href="https://ffm.to/srdeepbreaths"
-              >
-                Deep Breaths
+              <OutboundLink className="listLink" href="https://ffm.to/amtpo">
+                A Moment To Pivot On
                 <br />
-                <span className="italics listLink">5th of January, 2024</span>
+                <span className="italics listLink">19th of July, 2024</span>
               </OutboundLink>
             </ListItem>
             <ListItem itemID={0} stateFunc={setCurrentSelection}>
               <OutboundLink
                 className="listLink"
-                href="https://ffm.to/srdeserveit"
+                href="https://release.studio/deep-breaths-the-music-and-the-misery-remix"
               >
-                DESERVE IT
+                Deep Breaths (The Music and The Misery Remix)
                 <br />
-                <span className="italics listLink">3rd of February, 2023</span>
+                <span className="italics listLink">15th of March, 2024</span>
               </OutboundLink>
             </ListItem>
           </div>
@@ -217,33 +202,73 @@ const IndexPage = () => {
           <div className="rightShow">
             <div>
               <div className="showContainer">
-                <div
-                  style={{
-                    display: currentSelection == 1 ? "block" : "none",
-                  }}
-                >
-                  <h3
-                    id="layer-1"
-                    ref={deepBreathsRefs.layerOne}
-                    className="showText"
-                  >
-                    Deep Breaths
-                  </h3>
-                  <div ref={deepBreathsRefs.layerTwo}>
-                    <StaticImage
-                      src="../images/deepBreaths.jpg"
-                      alt="Deep Breaths Artwork"
-                      placeholder="blurred"
-                      width={1000}
-                      height={1000}
-                      className="showImage"
-                      layout="constrained"
-                      imgStyle={{ zIndex: 0 }}
-                    />
+                <div style={{ display: "block" }}>
+                  <div className="headingDiv" ref={Refs.layerOne}>
+                    {currentSelection == 1 ? (
+                      <h3 className="showText">A Moment To Pivot On</h3>
+                    ) : (
+                      currentSelection == 0 && (
+                        <h3 className="showText">
+                          Deep Breaths (The Music and The Misery Remix)
+                        </h3>
+                      )
+                    )}
+
+                    <div className="imageDiv" ref={Refs.layerTwo}>
+                      {currentSelection == 1 ? (
+                        <StaticImage
+                          src="../images/amtpo.jpg"
+                          alt="AMTPO Artwork"
+                          placeholder="blurred"
+                          width={1000}
+                          height={1000}
+                          className="showImage"
+                          layout="constrained"
+                          imgStyle={{ zIndex: -1 }}
+                        />
+                      ) : (
+                        currentSelection == 0 && (
+                          <StaticImage
+                            src="../images/dbtmam.jpg"
+                            alt="Deep Breaths (The Music And The Misery Remix) Artwork"
+                            placeholder="blurred"
+                            width={1000}
+                            height={1000}
+                            className="showImage"
+                            layout="constrained"
+                            imgStyle={{ zIndex: -1 }}
+                          />
+                        )
+                      )}
+                    </div>
                   </div>
                 </div>
-
-                <div
+                {/* <div
+                style={{
+                  display: currentSelection == 1 ? "block" : "none",
+                }}
+              >
+                <h3
+                  id="layer-1"
+                  ref={deepBreathsRefs.layerOne}
+                  className="showText"
+                >
+                  Deep Breaths
+                </h3>
+                <div ref={deepBreathsRefs.layerTwo}>
+                  <StaticImage
+                    src="../images/deepBreaths.jpg"
+                    alt="Deep Breaths Artwork"
+                    placeholder="blurred"
+                    width={1000}
+                    height={1000}
+                    className="showImage"
+                    layout="constrained"
+                    imgStyle={{ zIndex: 0 }}
+                  />
+                </div>
+              </div> */}
+                {/* <div
                   style={{
                     display: currentSelection == 0 ? "block" : "none",
                   }}
@@ -267,7 +292,7 @@ const IndexPage = () => {
                       id="layer-2"
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
