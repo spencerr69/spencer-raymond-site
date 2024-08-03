@@ -1,163 +1,174 @@
 @font-face {
-  font-family: "Jost";
-  src: url("../fonts/Jost.ttf");
+    font-family: "Jost";
+    src: url("../fonts/Jost.ttf");
 }
+
 @font-face {
-  font-family: "Jost-Italic";
-  src: url("../fonts/Jost-Italic.ttf");
+    font-family: "Jost-Italic";
+    src: url("../fonts/Jost-Italic.ttf");
 }
 
 html {
-  font-family: Jost;
+    font-family: Jost;
 }
 
 body {
-  font-family: Jost, Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #222222;
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #222222;
 }
 
 main {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .splashContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .splashBG {
-  z-index: -100;
-  height: 100vh;
-  width: 100vw;
+    z-index: -100;
+    height: 100vh;
+    width: 100vw;
 }
 
 .listContainer {
-  background-color: #000000aa;
-  height: 80vh;
-  width: 30vw;
-  margin: 1em;
-  padding: 1em;
-  overflow: auto;
-  display: flex;
-  align-items: start;
-  flex-direction: column;
+    background-color: #000000aa;
+    height: 80vh;
+    width: 30vw;
+    margin: 1em;
+    padding: 1em;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .listItem {
-  color: white;
-  background-color: #ffffff33;
-  width: 100%;
-  padding: 1.55em 0;
-  margin: 0.5em 0;
+    box-sizing: border-box;
+    color: white;
+    background-color: #ffffff33;
+    width: 100%;
+    padding: 1.55em;
+    margin: 0.5em 0;
 }
 
 .listLink {
-  padding: 2rem;
-  font-family: Jost, Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
 }
-.italics {
-  font-family: "Jost-Italic", Arial, Helvetica, sans-serif;
 
-  font-weight: 300 !important;
-  font-size: 16px !important;
-  padding: 0em 2em;
+.italics {
+    font-family: "Jost-Italic", Arial, Helvetica, sans-serif;
+
+    font-weight: 300 !important;
+    font-size: 16px !important;
 }
 
 .leftList {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-  font-family: Jost, Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: white;
-  font-size: 48px;
-  line-height: 0;
-  padding-bottom: 0;
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 48px;
+    line-height: 0;
+    padding-bottom: 0;
 }
 
 .socialLinks {
-  color: white;
+    color: white;
 }
 
 .social {
-  color: white;
+    display: inline;
+}
+
+.social:not(:last-of-type)::after {
+    content: " | ";
+
+    text-decoration: none;
+}
+
+.social a {
+    color: white;
 }
 
 .social:visited {
-  color: #dddddd;
+    color: #dddddd;
 }
 
 .titleBar {
-  padding: 0 1rem;
+    padding: 0 1rem;
 }
 
 .rightShow {
-  flex: 1;
+    flex: 1;
 
-  align-items: end;
-  justify-content: start;
-  flex-direction: column;
-  margin: 5vw;
-  padding: 0;
-  margin-top: -15vh;
-  overflow: none;
+    align-items: end;
+    justify-content: start;
+    flex-direction: column;
+    margin: 5vw;
+    padding: 0;
+    margin-top: -15vh;
+    overflow: none;
 }
 
 .showImage {
-  width: 30vw;
-  height: 30vw;
-  position: relative;
-  z-index: -1;
+    width: 30vw;
+    height: 30vw;
+    position: relative;
+    z-index: -1;
 }
 
 .showText {
-  color: white;
-  margin: -40px;
-  text-align: end;
-  font-size: 4vw;
-  font-weight: 600;
-  z-index: 1;
-  position: relative;
-  width: auto;
+    color: white;
+    margin: -40px;
+    text-align: end;
+    font-size: 4vw;
+    font-weight: 600;
+    z-index: 1;
+    position: relative;
+    width: auto;
 }
 
 .showContainer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 800px) {
-  .splashContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
+    .splashContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .listContainer {
-    width: 90vw;
-    height: 90vh;
-    align-items: center;
-  }
+    .listContainer {
+        width: 90vw;
+        height: 90vh;
+        align-items: center;
+    }
 }
+
 @media only screen and (max-width: 1520px) {
-  h1 {
-    line-height: 48px !important;
-  }
+    h1 {
+        line-height: 48px !important;
+    }
 }

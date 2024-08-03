@@ -1,84 +1,84 @@
 .headingPK {
-  margin: 0;
-  font-size: 5em;
-  line-height: 20px;
+   margin: 0;
+   font-size: 5em;
+   line-height: 20px;
 }
 
 .hLink {
-  text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-decoration-color: white;
+   text-decoration: underline;
+   text-decoration-thickness: 5px;
+   text-decoration-color: white;
 }
 
 .flavour {
-  color: white;
-  font-size: 1.5em !important;
-  text-align: center;
-  padding: 0;
+   color: white;
+   font-size: 1.5em !important;
+   text-align: center;
+   padding: 0;
 }
 
 .epkContainer {
-  margin: 3em;
-  padding: 2em;
-  background-color: #000000aa;
-  display: flex;
+   margin: 3em;
+   padding: 2em;
+   background-color: #000000aa;
+   display: flex;
 }
 
 .leftEPK {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3em;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 3em;
 }
 
 .rightEPK {
-  flex: 1;
-  padding: 3em;
+   flex: 1;
+   padding: 3em;
 }
 
 .bioSec p {
-  color: white;
-  text-align: justify;
-  font-size: 1.2rem;
+   color: white;
+   text-align: justify;
+   font-size: 1.2rem;
 }
 .bioSec {
-  overflow: scroll;
+   overflow: scroll;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: 0.8fr 0.8fr;
-  gap: 1em;
+   display: grid;
+   grid-template-columns: 0.8fr 0.8fr;
+   gap: 1em;
 }
 
 .splashBGPK {
-  min-height: 100vh;
+   min-height: 100vh;
 }
 
 .linksPK {
-  text-align: center;
-  padding: 0;
+   text-align: center;
+   padding: 0;
 }
 
 @media only screen and (max-width: 1000px) {
-  .epkContainer {
-    flex-direction: column;
-    padding: 1em;
-    margin: 1em;
-  }
+   .epkContainer {
+      flex-direction: column;
+      padding: 1em;
+      margin: 1em;
+   }
 
-  .leftEPK {
-    padding: 1em;
-  }
+   .leftEPK {
+      padding: 1em;
+   }
 
-  .rightEPK {
-    padding: 1em;
-  }
+   .rightEPK {
+      padding: 1em;
+   }
 }
 @media only screen and (max-width: 1520px) {
-  .headingPK {
-    line-height: 48px !important;
-    text-align: center;
-  }
+   .headingPK {
+      line-height: 48px !important;
+      text-align: center;
+   }
 }
