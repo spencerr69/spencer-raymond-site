@@ -157,12 +157,13 @@ const IndexPage = ({ data }: { data: any }) => {
    }, []);
 
    return (
-      <main
-         ref={shit}
-         style={{
-            background: !albumMetadata[currentSelection] ? '#000' : albumMetadata[currentSelection].colour,
-         }}
-      >
+      <main ref={shit}>
+         <div
+            className="noisyBG"
+            style={{
+               backgroundColor: !albumMetadata[currentSelection] ? '#000' : albumMetadata[currentSelection].colour,
+            }}
+         ></div>
          <div className="splashBG splashContainer" onMouseMove={mouseMoveHandle}>
             <div className="leftList">
                <div className="listContainer shit" data-parallax-scale={0.2}>
