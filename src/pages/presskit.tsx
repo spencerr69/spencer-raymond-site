@@ -45,7 +45,6 @@ const PressKit = ({ data }: { data: any }) => {
 
    useEffect(() => {
       setBio(data.sanitySiteSettings._rawBio);
-      console.log(bio);
 
       const releases: Release[] = data.allSanityRelease.nodes;
       releases.sort((a, b) => {
@@ -55,7 +54,6 @@ const PressKit = ({ data }: { data: any }) => {
       setImages(
          [<StaticImage src="../images/selfie.jpg" alt="spencer raymond" />].concat(
             releases.map((release) => {
-               console.log(release);
                return (
                   <GatsbyImage
                      alt={`${release.title}`}
@@ -66,7 +64,6 @@ const PressKit = ({ data }: { data: any }) => {
             })
          )
       );
-      console.log(data.allSanityRelease.nodes);
    }, []);
 
    return (

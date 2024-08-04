@@ -122,8 +122,6 @@ const IndexPage = ({ data }: { data: any }) => {
          return new Date(a.releaseDate) < new Date(b.releaseDate) ? 1 : -1;
       });
 
-      console.log(releases);
-
       setAlbumArtworks(
          releases.map((release) => {
             return (
@@ -154,7 +152,6 @@ const IndexPage = ({ data }: { data: any }) => {
             return { colour: release.albumArt.asset.metadata.palette.muted.background, title: release.title };
          })
       );
-      console.log(albumMetadata);
    }, []);
 
    return (
