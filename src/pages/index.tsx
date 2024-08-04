@@ -33,6 +33,7 @@ export function Head() {
          <meta property="twitter:title" content={title} />
          <meta property="twitter:description" content={description} />
          <meta property="twitter:image" content={'https://spencerraymon.de' + amtpo}></meta>
+         <html lang="en" />
       </>
    );
 }
@@ -59,7 +60,7 @@ export type Release = {
 //for leftList
 const ListItem = (props: { children: any; onMouseOver: () => void }) => {
    return (
-      <div className="listItem" onMouseOver={props.onMouseOver}>
+      <div className="listLink" onMouseOver={props.onMouseOver}>
          {props.children}
       </div>
    );
@@ -138,13 +139,13 @@ const IndexPage = ({ data }: { data: any }) => {
       setAlbumLinks(
          releases.map((release, i) => {
             return (
-               <ListItem onMouseOver={() => setCurrentSelection(i)} key={release.UPC}>
-                  <OutboundLink className="listLink" href={release.link}>
+               <OutboundLink href={release.link} className="listItem">
+                  <ListItem onMouseOver={() => setCurrentSelection(i)} key={release.UPC}>
                      {release.title}
                      <br />
                      <span className="italics listLink">{parseReleaseDate(release.releaseDate)}</span>
-                  </OutboundLink>
-               </ListItem>
+                  </ListItem>
+               </OutboundLink>
             );
          })
       );

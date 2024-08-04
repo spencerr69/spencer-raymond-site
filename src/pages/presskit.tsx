@@ -71,7 +71,7 @@ const PressKit = ({ data }: { data: any }) => {
 
    return (
       <>
-         <main>
+         <main style={{ backgroundColor: '#222' }}>
             <div className="splashBGPK splashContainer">
                <div className="epkContainer">
                   <div className="leftEPK">

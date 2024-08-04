@@ -1,11 +1,13 @@
 @font-face {
    font-family: 'Jost';
    src: url('../fonts/Jost.ttf');
+   font-display: swap;
 }
 
 @font-face {
    font-family: 'Jost-Italic';
    src: url('../fonts/Jost-Italic.ttf');
+   font-display: swap;
 }
 
 html {
@@ -60,12 +62,15 @@ main {
    overflow: auto;
    display: flex;
    flex-direction: column;
+   box-shadow: #00000033 5px 5px 50px 5px;
 }
 
 .listItem {
    box-sizing: border-box;
    color: white;
    background-color: #ffffff33;
+
+   text-decoration: none;
    width: 100%;
    padding: 1.55em;
    margin: 0.5em 0;
@@ -161,7 +166,7 @@ h1 {
    top: 0%;
    z-index: -1;
 
-   box-shadow: black 10px 10px;
+   box-shadow: #00000022 10px 10px 50px 10px;
 }
 
 .headingDiv {
@@ -182,7 +187,7 @@ h1 {
    font-weight: 600;
    z-index: 1;
 
-   text-shadow: black 5px 5px;
+   text-shadow: #00000055 15px 15px 50px;
 
    margin: 0;
    line-height: 1em;
@@ -200,6 +205,10 @@ h1 {
       width: 90vw;
       height: 90vh;
       align-items: center;
+   }
+
+   .socialLinks {
+      font-size: 20px;
    }
 }
 
