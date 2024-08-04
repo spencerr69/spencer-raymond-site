@@ -3,7 +3,7 @@ import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import '../styles/index.css';
 import '../styles/presskit.css';
 import favicon from '../images/favicon.png';
-import DB from '../images/deepBreaths.jpg';
+import amtpo from '../images/amtpo.jpg';
 import { graphql, Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { PortableText } from '@portabletext/react';
@@ -28,13 +28,13 @@ export function Head() {
          <meta property="og:url" content={`https://spencerraymon.de`} />
          <meta property="og:title" content={'Spencer Raymond'} />
          <meta property="og:description" content={description} />
-         <meta property="og:image" content={'https://spencerraymon.de' + DB} />
+         <meta property="og:image" content={'https://spencerraymon.de' + amtpo} />
          {/* <!-- Twitter --> */}
          <meta property="twitter:card" content="summary_large_image" />
          <meta property="twitter:url" content={'https://spencerraymon.de'} />
          <meta property="twitter:title" content={'Spencer Raymond'} />
          <meta property="twitter:description" content={description} />
-         <meta property="twitter:image" content={'https://spencerraymon.de' + DB}></meta>
+         <meta property="twitter:image" content={'https://spencerraymon.de' + amtpo}></meta>
       </>
    );
 }
