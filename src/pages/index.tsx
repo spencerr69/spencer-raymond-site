@@ -89,6 +89,8 @@ const IndexPage = ({ data }: { data: any }) => {
 
       mobileMediaQuery.addEventListener('change', listener);
 
+      listener();
+
       return () => mobileMediaQuery.removeEventListener('change', listener);
    }, []);
 
