@@ -16,11 +16,14 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@portabletext/react": "^3.1.0",
 		"gatsby": "^5.13.3",
 		"gatsby-plugin-google-gtag": "^5.13.1",
 		"gatsby-plugin-image": "^3.13.1",
 		"gatsby-plugin-sharp": "^5.13.1",
 		"gatsby-source-filesystem": "^5.13.1",
+		"gatsby-source-sanity": "^7.9.1",
+		"node-vibrant": "^3.2.1-alpha.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-responsive": "^9.0.2",

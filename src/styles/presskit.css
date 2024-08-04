@@ -1,7 +1,7 @@
 .headingPK {
    margin: 0;
-   font-size: 5em;
-   line-height: 20px;
+   font-size: 64px;
+   line-height: 64px;
 }
 
 .hLink {
@@ -42,6 +42,13 @@
    text-align: justify;
    font-size: 1.2rem;
 }
+
+blockquote {
+   color: white;
+   text-align: center;
+   font-style: italic;
+}
+
 .bioSec {
    overflow: scroll;
 }
