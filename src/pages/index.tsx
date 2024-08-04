@@ -8,10 +8,9 @@ import { links } from '../consts/vars';
 import amtpo from '../images/dbtmam.jpg';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-const { title, description } = useSiteMetadata();
-
 //head gatsby stuff
 export function Head() {
+   const { title, description } = useSiteMetadata();
    return (
       <>
          <title>{title}</title>
