@@ -7,7 +7,7 @@ import DB from '../images/deepBreaths.jpg';
 import { graphql, Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { PortableText } from '@portabletext/react';
-import { links } from './vars';
+import { links } from '../consts/vars';
 import { Release } from './index';
 
 const description = 'Electronic Press Kit of Spencer Raymond, an indie-electronic rock artist from Melbourne.';

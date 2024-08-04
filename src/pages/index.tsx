@@ -4,7 +4,7 @@ import '../styles/index.css';
 import favicon from '../images/favicon.png';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { graphql, Link } from 'gatsby';
-import { links } from './vars';
+import { links } from '../consts/vars';
 import amtpo from '../images/dbtmam.jpg';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
