@@ -17,22 +17,22 @@
 	},
 	"dependencies": {
 		"@portabletext/react": "^3.1.0",
-		"gatsby": "^5.13.3",
+		"gatsby": "^5.13.7",
 		"gatsby-plugin-google-gtag": "^5.13.1",
 		"gatsby-plugin-image": "^3.13.1",
 		"gatsby-plugin-sharp": "^5.13.1",
 		"gatsby-source-filesystem": "^5.13.1",
 		"gatsby-source-sanity": "^7.9.1",
-		"node-vibrant": "^3.2.1-alpha.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-responsive": "^9.0.2",
-		"sharp": "^0.33.2"
+		"node-vibrant": "3.2.1-alpha.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-responsive": "^10.0.0",
+		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
-		"@types/node": "^20.11.24",
-		"@types/react": "^18.2.61",
-		"@types/react-dom": "^18.2.19",
-		"typescript": "^5.3.3"
+		"@types/node": "^22.4.0",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"typescript": "^5.5.4"
 	}
 }
