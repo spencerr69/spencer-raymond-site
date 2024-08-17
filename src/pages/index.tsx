@@ -1,9 +1,9 @@
-import React, { ReactElement, useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { GatsbyImage, IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
 import '../styles/index.css';
 import favicon from '../images/favicon.png';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 import { links } from '../consts/vars';
 import amtpo from '../images/amtpo.jpg';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
@@ -64,7 +64,6 @@ const ListItem = (props: { children: any; onMouseOver: () => void }) => {
          {props.children}
       </div>
    );
-   5;
 };
 
 const parseReleaseDate = (input: string): string => {
@@ -95,25 +94,30 @@ const IndexPage = ({ data }: { data: any }) => {
       return () => mobileMediaQuery.removeEventListener('change', listener);
    }, []);
 
-   const shit = useRef<HTMLDivElement>(null);
+   const mainRef = useRef<HTMLDivElement>(null);
 
-   const mouseMoveHandle = (e: any) => {
-      if (!shit.current) {
-         return;
-      }
+   const mouseMoveHandle = useCallback(
+      (e: any) => {
+         if (!mainRef.current) {
+            return;
+         }
 
-      if (!isMobile) {
-         const size = (Math.max(innerWidth, innerHeight) / 50) * -1;
-         const pageX = (e.clientX - window.innerWidth / 2) / size,
-            pageY = (e.clientY - window.innerHeight / 2) / size;
+         if (!isMobile) {
+            const size = (Math.max(innerWidth, innerHeight) / 50) * -1;
+            const pageX = (e.clientX - window.innerWidth / 2) / size,
+               pageY = (e.clientY - window.innerHeight / 2) / size;
 
-         shit.current.querySelectorAll('.shit').forEach((element) => {
-            const scale = +(element.getAttribute('data-parallax-scale') ?? '1');
+            mainRef.current.querySelectorAll('.shit').forEach((element) => {
+               const scale = +(element.getAttribute('data-parallax-scale') ?? '1');
 
-            (element as HTMLElement).style.transform = `translateX(${pageX * scale}px) translateY(${pageY * scale}px)`;
-         });
-      }
-   };
+               (element as HTMLElement).style.transform = `translateX(${pageX * scale}px) translateY(${
+                  pageY * scale
+               }px)`;
+            });
+         }
+      },
+      [isMobile]
+   );
 
    useEffect(() => {
       const releases: Release[] = data.allSanityRelease.nodes;
@@ -155,7 +159,7 @@ const IndexPage = ({ data }: { data: any }) => {
    }, []);
 
    return (
-      <main ref={shit}>
+      <main ref={mainRef}>
          <div
             className="noisyBG"
             style={{
