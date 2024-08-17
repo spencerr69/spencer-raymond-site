@@ -73,7 +73,7 @@ const parseReleaseDate = (input: string): string => {
 };
 
 //main function
-const IndexPage = ({ data }: { data: any }) => {
+const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
    const [isMobile, setIsMobile] = useState(false);
    const [currentSelection, setCurrentSelection] = useState(0);
    const [albumArtworks, setAlbumArtworks] = useState<ReactElement[]>([]);
@@ -120,7 +120,7 @@ const IndexPage = ({ data }: { data: any }) => {
    );
 
    useEffect(() => {
-      const releases: Release[] = data.allSanityRelease.nodes;
+      const releases = data.allSanityRelease.nodes as Release[];
 
       releases.sort((a, b) => {
          return new Date(a.releaseDate) < new Date(b.releaseDate) ? 1 : -1;
