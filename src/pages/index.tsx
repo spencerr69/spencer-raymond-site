@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
-import { GatsbyImage, IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import '../styles/index.css';
 import favicon from '../images/favicon.png';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
