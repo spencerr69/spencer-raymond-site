@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
-import '../styles/index.css';
-import '../styles/presskit.css';
+import '../styles/index.scss';
+import '../styles/presskit.scss';
 import favicon from '../images/favicon.png';
 import amtpo from '../images/amtpo.jpg';
 import { graphql, Link } from 'gatsby';

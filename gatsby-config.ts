@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
    // Learn more at: https://gatsby.dev/graphql-typegen
    graphqlTypegen: true,
    plugins: [
+      'gatsby-plugin-sass',
       {
          resolve: 'gatsby-source-sanity',
          options: { projectId: 'gtllxo8k', dataset: 'production' },

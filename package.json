@@ -20,6 +20,7 @@
 		"gatsby": "^5.13.7",
 		"gatsby-plugin-google-gtag": "^5.13.1",
 		"gatsby-plugin-image": "^3.13.1",
+		"gatsby-plugin-sass": "^6.13.1",
 		"gatsby-plugin-sharp": "^5.13.1",
 		"gatsby-source-filesystem": "^5.13.1",
 		"gatsby-source-sanity": "^7.9.1",
@@ -27,6 +28,7 @@
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-responsive": "^10.0.0",
+		"sass": "^1.77.8",
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
