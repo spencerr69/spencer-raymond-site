@@ -141,8 +141,12 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
       setAlbumLinks(
          releases.map((release, i) => {
             return (
-               <OutboundLink href={release.link} className="listItem">
-                  <ListItem onMouseOver={() => setCurrentSelection(i)} key={release.UPC}>
+               <OutboundLink
+                  key={release.UPC}
+                  href={'https://link.spencerraymon.de/' + release.slug.current}
+                  className="listItem"
+               >
+                  <ListItem onMouseOver={() => setCurrentSelection(i)}>
                      {release.title}
                      <br />
                      <span className="italics listLink">{parseReleaseDate(release.releaseDate)}</span>
@@ -216,6 +220,9 @@ export const query = graphql`
             releaseDate
             link
             UPC
+            slug {
+               current
+            }
             albumArt {
                asset {
                   gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1000, height: 1000)

@@ -3,7 +3,22 @@ type Link = {
    name: string;
 };
 
+type Release = {
+   name: string;
+   releaseDate: string; //YYYY/MM/DD
+   catalogNumber: string; //APXXXX
+   artwork: string; //link to artwork
+   tracklist: {
+      trackName: string;
+      trackNo: number;
+   }[];
+};
+
 export const links: Link[] = [
+   {
+      url: 'https://bsky.app/profile/spencerraymon.de',
+      name: 'Bluesky',
+   },
    {
       url: 'https://twitter.com/spencerr69',
       name: 'Twitter',
@@ -29,7 +44,7 @@ export const links: Link[] = [
       name: 'Apple Music',
    },
    {
-      url: 'https://soundcloud.com/srspencerraymond',
+      url: 'https://soundcloud.com/spencerraymond',
       name: 'Soundcloud',
    },
 ];
