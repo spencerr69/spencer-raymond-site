@@ -55,6 +55,9 @@ export type Release = {
    };
    link: string;
    releaseDate: string;
+   slug: {
+      current: string;
+   };
 };
 
 //for leftList
@@ -120,7 +123,7 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
    );
 
    useEffect(() => {
-      const releases = data.allSanityRelease.nodes as Release[];
+      const releases = data.allSanityRelease.nodes as unknown as Release[];
 
       releases.sort((a, b) => {
          return new Date(a.releaseDate) < new Date(b.releaseDate) ? 1 : -1;
