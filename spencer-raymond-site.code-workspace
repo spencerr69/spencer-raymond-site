@@ -1,7 +1,17 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
+   "folders": [
+	{
+		"path": "../spencerraymon_cms"
+	},
+	{
+		"path": "../link-spencerraymonde"
+	},
+	{
+		"path": "."
+	},
+	{
+		"path": "../sr-workers/linkgrabbr"
+	}
+],
+   "settings": {}
 }
