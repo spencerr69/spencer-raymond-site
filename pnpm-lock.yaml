@@ -28,7 +28,7 @@ importers:
         version: 3.14.0(@babel/core@7.25.2)(gatsby-plugin-sharp@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(graphql@16.9.0))(gatsby-source-filesystem@5.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-plugin-sass:
         specifier: ^6.13.1
-        version: 6.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(sass@1.83.0)(webpack@5.93.0(esbuild@0.24.2))
+        version: 6.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(sass@1.83.1)(webpack@5.93.0(esbuild@0.24.2))
       gatsby-plugin-sharp:
         specifier: ^5.13.1
         version: 5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(graphql@16.9.0)
@@ -43,7 +43,7 @@ importers:
         version: 5.0.9
       node-vibrant:
         specifier: 4.0.0
-        version: 4.0.0(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.0)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1)
+        version: 4.0.0(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.1)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1)
       path-to-regexp:
         specifier: '>=0.1.12'
         version: 0.1.12
@@ -57,8 +57,8 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0(react@18.3.1)
       sass:
-        specifier: ^1.77.8
-        version: 1.83.0
+        specifier: ^1.83.1
+        version: 1.83.1
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -6111,8 +6111,8 @@ packages:
       sass:
         optional: true
 
-  sass@1.83.0:
-    resolution: {integrity: sha512-qsSxlayzoOjdvXMVLkzF84DJFc2HZEL/rFyGIKbbilYtAvlCxyuzUeff9LawTn4btVnLKg75Z8MMr1lxU1lfGw==}
+  sass@1.83.1:
+    resolution: {integrity: sha512-EVJbDaEs4Rr3F0glJzFSOvtg2/oy2V/YrGFPqPY24UqcLDWcI9ZY5sN+qyO3c/QCZwzgfirvhXvINiJCE/OLcA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -6288,10 +6288,6 @@ packages:
 
   source-list-map@2.0.1:
     resolution: {integrity: sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==}
-
-  source-map-js@1.2.0:
-    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
-    engines: {node: '>=0.10.0'}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -9246,7 +9242,7 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tanstack/config@0.15.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1))':
+  '@tanstack/config@0.15.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1))':
     dependencies:
       '@commitlint/parse': 19.5.0
       '@eslint/js': 9.17.0
@@ -9269,9 +9265,9 @@ snapshots:
       typedoc-plugin-markdown: 4.3.3(typedoc@0.27.6(typescript@5.5.4))
       typescript-eslint: 8.18.2(eslint@7.32.0)(typescript@5.5.4)
       v8flags: 4.0.1
-      vite-plugin-dts: 4.0.3(@types/node@18.19.68)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1))
-      vite-plugin-externalize-deps: 0.8.0(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1))
-      vite-tsconfig-paths: 5.1.4(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1))
+      vite-plugin-dts: 4.0.3(@types/node@18.19.68)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1))
+      vite-plugin-externalize-deps: 0.8.0(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1))
+      vite-tsconfig-paths: 5.1.4(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1))
       vue-eslint-parser: 9.4.3(eslint@7.32.0)
     transitivePeerDependencies:
       - '@types/node'
@@ -9602,12 +9598,12 @@ snapshots:
       '@vibrant/quantizer': 4.0.0
       '@vibrant/worker': 4.0.0
 
-  '@vibrant/generator-default@4.0.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.0)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1)':
+  '@vibrant/generator-default@4.0.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.1)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1)':
     dependencies:
-      '@tanstack/config': 0.15.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1))
+      '@tanstack/config': 0.15.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1))
       '@vibrant/color': 4.0.0
       '@vibrant/generator': 4.0.0
-      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)
+      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)
     transitivePeerDependencies:
       - '@types/node'
       - esbuild
@@ -9684,7 +9680,7 @@ snapshots:
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   '@vue/compiler-dom@3.5.13':
     dependencies:
@@ -12113,13 +12109,13 @@ snapshots:
       - graphql
       - supports-color
 
-  gatsby-plugin-sass@6.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(sass@1.83.0)(webpack@5.93.0(esbuild@0.24.2)):
+  gatsby-plugin-sass@6.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(sass@1.83.1)(webpack@5.93.0(esbuild@0.24.2)):
     dependencies:
       '@babel/runtime': 7.25.0
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4)
       resolve-url-loader: 3.1.5
-      sass: 1.83.0
-      sass-loader: 10.5.2(sass@1.83.0)(webpack@5.93.0(esbuild@0.24.2))
+      sass: 1.83.1
+      sass-loader: 10.5.2(sass@1.83.1)(webpack@5.93.0(esbuild@0.24.2))
     transitivePeerDependencies:
       - fibers
       - node-sass
@@ -13552,11 +13548,11 @@ snapshots:
 
   node-releases@2.0.18: {}
 
-  node-vibrant@4.0.0(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.0)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1):
+  node-vibrant@4.0.0(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.1)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1):
     dependencies:
       '@types/node': 18.19.68
       '@vibrant/core': 4.0.0
-      '@vibrant/generator-default': 4.0.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.0)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1)
+      '@vibrant/generator-default': 4.0.0(@types/node@18.19.68)(esbuild@0.24.2)(eslint@7.32.0)(rollup@4.29.1)(sass@1.83.1)(terser@5.31.6)(typescript@5.5.4)(yaml@2.6.1)
       '@vibrant/image-browser': 4.0.0
       '@vibrant/image-node': 4.0.0
       '@vibrant/quantizer-mmcq': 4.0.0
@@ -14078,7 +14074,7 @@ snapshots:
     dependencies:
       nanoid: 3.3.8
       picocolors: 1.0.1
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   postcss@8.4.49:
     dependencies:
@@ -14564,7 +14560,7 @@ snapshots:
 
   same-origin@0.1.1: {}
 
-  sass-loader@10.5.2(sass@1.83.0)(webpack@5.93.0(esbuild@0.24.2)):
+  sass-loader@10.5.2(sass@1.83.1)(webpack@5.93.0(esbuild@0.24.2)):
     dependencies:
       klona: 2.0.6
       loader-utils: 2.0.4
@@ -14573,13 +14569,13 @@ snapshots:
       semver: 7.6.3
       webpack: 5.93.0(esbuild@0.24.2)
     optionalDependencies:
-      sass: 1.83.0
+      sass: 1.83.1
 
-  sass@1.83.0:
+  sass@1.83.1:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.0.3
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.4.1
 
@@ -14838,8 +14834,6 @@ snapshots:
       - utf-8-validate
 
   source-list-map@2.0.1: {}
-
-  source-map-js@1.2.0: {}
 
   source-map-js@1.2.1: {}
 
@@ -15413,7 +15407,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-plugin-dts@4.0.3(@types/node@18.19.68)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)):
+  vite-plugin-dts@4.0.3(@types/node@18.19.68)(rollup@4.29.1)(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)):
     dependencies:
       '@microsoft/api-extractor': 7.47.4(@types/node@18.19.68)
       '@rollup/pluginutils': 5.1.4(rollup@4.29.1)
@@ -15427,28 +15421,28 @@ snapshots:
       typescript: 5.5.4
       vue-tsc: 2.0.29(typescript@5.5.4)
     optionalDependencies:
-      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)
+      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)
     transitivePeerDependencies:
       - '@types/node'
       - rollup
       - supports-color
 
-  vite-plugin-externalize-deps@0.8.0(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)):
+  vite-plugin-externalize-deps@0.8.0(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)):
     dependencies:
-      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)
+      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)
 
-  vite-tsconfig-paths@5.1.4(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.5.4)(vite@6.0.6(@types/node@18.19.68)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)):
     dependencies:
       debug: 4.3.6
       globrex: 0.1.2
       tsconfck: 3.1.4(typescript@5.5.4)
     optionalDependencies:
-      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1)
+      vite: 6.0.6(@types/node@22.4.0)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@6.0.6(@types/node@22.4.0)(sass@1.83.0)(terser@5.31.6)(yaml@2.6.1):
+  vite@6.0.6(@types/node@22.4.0)(sass@1.83.1)(terser@5.31.6)(yaml@2.6.1):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.4.49
@@ -15456,7 +15450,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.4.0
       fsevents: 2.3.3
-      sass: 1.83.0
+      sass: 1.83.1
       terser: 5.31.6
       yaml: 2.6.1
 
