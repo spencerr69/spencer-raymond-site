@@ -1,0 +1,35 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.background {
+   background-color: #242424;
+   display: flex;
+   // justify-content: center;
+   // align-items: center;
+   height: 100vh;
+   
+}
+
+.monospacedLetter {
+   display: inline-block;
+      /* Enable widths */
+      width: 1em;
+      /* Set width across all characters */
+      text-align: center;
+      color: white;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      
+}
+
+.topHalf {
+   overflow: hidden;
+   height: 40em;
+   width: 100vw;
+   top: 0;
+   margin: 0;
+   padding: 0;
+   
+}
+
