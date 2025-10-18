@@ -1,46 +1,45 @@
 {
-   "name": "spencer-raymond",
-   "version": "1.0.0",
-   "private": true,
-   "description": "spencer-raymond",
-   "author": "Spencer Raymond",
-   "keywords": [
-      "gatsby"
-   ],
-   "scripts": {
-      "develop": "gatsby develop",
-      "start": "gatsby develop",
-      "build": "gatsby build",
-      "serve": "gatsby serve",
-      "clean": "gatsby clean",
-      "typecheck": "tsc --noEmit"
-   },
-   "dependencies": {
-      "@portabletext/react": "^3.2.1",
-      "body-parser": ">=1.20.3",
-      "cross-spawn": ">=6.0.6",
-      "gatsby": "^5.13.7",
-      "gatsby-plugin-google-gtag": "^5.14.0",
-      "gatsby-plugin-image": "^3.13.1",
-      "gatsby-plugin-posthog": "^1.0.1",
-      "gatsby-plugin-sass": "^6.13.1",
-      "gatsby-plugin-sharp": "^5.13.1",
-      "gatsby-source-filesystem": "^5.14.0",
-      "gatsby-source-sanity": "^7.9.1",
-      "nanoid": ">=3.3.8",
-      "node-vibrant": "4.0.0",
-      "path-to-regexp": ">=8.3.0",
-      "react": "^18.3.1",
-      "react-dom": "^18.3.1",
-      "react-responsive": "^10.0.0",
-      "sass": "^1.86.0",
-      "sharp": "^0.33.5",
-      "webpack-dev-middleware": ">=7.4.5"
-   },
-   "devDependencies": {
-      "@types/node": "^22.13.12",
-      "@types/react": "^18.3.3",
-      "@types/react-dom": "^18.3.0",
-      "typescript": "^5.5.4"
-   }
+    "name": "spencer-raymond",
+    "version": "1.0.0",
+    "private": true,
+    "description": "spencer-raymond",
+    "author": "Spencer Raymond",
+    "keywords": [
+        "gatsby"
+    ],
+    "scripts": {
+        "develop": "gatsby develop",
+        "start": "gatsby develop",
+        "build": "gatsby build",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@portabletext/react": "^3.2.1",
+        "body-parser": ">=1.20.3",
+        "cross-spawn": ">=6.0.6",
+        "gatsby": "^5.13.7",
+        "gatsby-plugin-image": "^3.13.1",
+        "gatsby-plugin-posthog": "^1.0.1",
+        "gatsby-plugin-sass": "^6.13.1",
+        "gatsby-plugin-sharp": "^5.13.1",
+        "gatsby-source-filesystem": "^5.14.0",
+        "gatsby-source-sanity": "^7.9.1",
+        "nanoid": ">=3.3.8",
+        "node-vibrant": "4.0.0",
+        "path-to-regexp": ">=8.3.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-responsive": "^10.0.0",
+        "sass": "^1.86.0",
+        "sharp": "^0.33.5",
+        "webpack-dev-middleware": ">=7.4.5"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.12",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "typescript": "^5.5.4"
+    }
 }
