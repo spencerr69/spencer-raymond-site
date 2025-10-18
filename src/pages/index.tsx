@@ -1,12 +1,17 @@
-import React, { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import '../styles/index.scss';
-import favicon from '../images/favicon.png';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import { graphql, Link, PageProps } from 'gatsby';
-import { links } from '../consts/vars';
-import amtpo from '../images/amtpo.jpg';
-import { useSiteMetadata } from '../hooks/use-site-metadata';
+import React, {
+    ReactElement,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import "../styles/index.scss";
+import favicon from "../images/favicon.png";
+import { graphql, Link, PageProps } from "gatsby";
+import { links } from "../consts/vars";
+import amtpo from "../images/amtpo.jpg";
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 //head gatsby stuff
 export function Head() {
@@ -15,7 +20,10 @@ export function Head() {
         <>
             <title>{title}</title>
             <meta name="description" content={description} />
-            <meta name="keywords" content="pop, music, art, artist, alternative, electronic, country, indie, acoustic" />
+            <meta
+                name="keywords"
+                content="pop, music, art, artist, alternative, electronic, country, indie, acoustic"
+            />
             <meta name="robots" content="index, follow" />
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
             <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
@@ -26,13 +34,19 @@ export function Head() {
             <meta property="og:url" content={`https://spencerraymon.de`} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            <meta property="og:image" content={'https://spencerraymon.de' + amtpo} />
+            <meta
+                property="og:image"
+                content={"https://spencerraymon.de" + amtpo}
+            />
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={'https://spencerraymon.de'} />
+            <meta property="twitter:url" content={"https://spencerraymon.de"} />
             <meta property="twitter:title" content={title} />
             <meta property="twitter:description" content={description} />
-            <meta property="twitter:image" content={'https://spencerraymon.de' + amtpo}></meta>
+            <meta
+                property="twitter:image"
+                content={"https://spencerraymon.de" + amtpo}
+            ></meta>
             <html lang="en" />
         </>
     );
@@ -71,7 +85,7 @@ const ListItem = (props: { children: any; onMouseOver: () => void }) => {
 };
 
 const parseReleaseDate = (input: string): string => {
-    const temp = input.split('-');
+    const temp = input.split("-");
 
     return `${temp[0]}/${temp[1]}/${temp[2]}`;
 };
@@ -79,23 +93,27 @@ const parseReleaseDate = (input: string): string => {
 //main function
 const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
     const [isMobile, setIsMobile] = useState(false);
-    const [currentSelection, setCurrentSelection] = useState(data.allSanityRelease.nodes[0].UPC);
+    const [currentSelection, setCurrentSelection] = useState(
+        data.allSanityRelease.nodes[0].UPC,
+    );
     const [albumArtworks, setAlbumArtworks] = useState<ReactElement[]>([]);
     const [albumLinks, setAlbumLinks] = useState<ReactElement[]>([]);
-    const [albumMetadata, setAlbumMetadata] = useState<{ key: string; colour: string; title: string }[]>([]);
+    const [albumMetadata, setAlbumMetadata] = useState<
+        { key: string; colour: string; title: string }[]
+    >([]);
 
     useEffect(() => {
-        const mobileMediaQuery = matchMedia('(max-width: 800px)');
+        const mobileMediaQuery = matchMedia("(max-width: 800px)");
 
         const listener = () => {
             setIsMobile(mobileMediaQuery.matches);
         };
 
-        mobileMediaQuery.addEventListener('change', listener);
+        mobileMediaQuery.addEventListener("change", listener);
 
         listener();
 
-        return () => mobileMediaQuery.removeEventListener('change', listener);
+        return () => mobileMediaQuery.removeEventListener("change", listener);
     }, []);
 
     const mainRef = useRef<HTMLDivElement>(null);
@@ -111,15 +129,19 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
                 const pageX = (e.clientX - window.innerWidth / 2) / size,
                     pageY = (e.clientY - window.innerHeight / 2) / size;
 
-                mainRef.current.querySelectorAll('.shit').forEach((element) => {
-                    const scale = +(element.getAttribute('data-parallax-scale') ?? '1');
+                mainRef.current.querySelectorAll(".shit").forEach((element) => {
+                    const scale = +(
+                        element.getAttribute("data-parallax-scale") ?? "1"
+                    );
 
-                    (element as HTMLElement).style.transform = `translateX(${pageX * scale}px) translateY(${pageY * scale
+                    (element as HTMLElement).style.transform =
+                        `translateX(${pageX * scale}px) translateY(${
+                            pageY * scale
                         }px)`;
                 });
             }
         },
-        [isMobile]
+        [isMobile],
     );
 
     useEffect(() => {
@@ -130,61 +152,91 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
         });
 
         setAlbumArtworks(
-            releases.map((release) => {
-                return release.Active ? (
-                    <GatsbyImage
-                        alt={`${release.title}`}
-                        image={release.albumArt.asset.gatsbyImageData}
-                        key={release.UPC}
-                        className={'showImage'}
-                    />
-                ) : <></>;
-            }).filter(e => e.key)
+            releases
+                .map((release) => {
+                    return release.Active ? (
+                        <GatsbyImage
+                            alt={`${release.title}`}
+                            image={release.albumArt.asset.gatsbyImageData}
+                            key={release.UPC}
+                            className={"showImage"}
+                        />
+                    ) : (
+                        <></>
+                    );
+                })
+                .filter((e) => e.key),
         );
         setAlbumLinks(
-            releases.map((release, i) => {
-                return release.Active ? (
-                    <OutboundLink
-                        key={release.UPC}
-                        href={'https://link.spencerraymon.de/' + release.slug.current}
-                        className="listItem"
-                    >
-                        <ListItem onMouseOver={() => setCurrentSelection(release.UPC)}>
-                            {release.title}
-                            <br />
-                            <span className="italics listLink">{parseReleaseDate(release.releaseDate)}</span>
-                        </ListItem>
-                    </OutboundLink>
-                ) : <></>;
-            }).filter(e => e.key)
+            releases
+                .map((release, i) => {
+                    return release.Active ? (
+                        <a
+                            key={release.UPC}
+                            href={
+                                "https://link.spencerraymon.de/" +
+                                release.slug.current
+                            }
+                            className="listItem"
+                        >
+                            <ListItem
+                                onMouseOver={() =>
+                                    setCurrentSelection(release.UPC)
+                                }
+                            >
+                                {release.title}
+                                <br />
+                                <span className="italics listLink">
+                                    {parseReleaseDate(release.releaseDate)}
+                                </span>
+                            </ListItem>
+                        </a>
+                    ) : (
+                        <></>
+                    );
+                })
+                .filter((e) => e.key),
         );
         setAlbumMetadata(
             releases.map((release) => {
-                return { key: release.UPC, colour: release.albumArt.asset.metadata.palette.muted.background, title: release.title };
-            })
+                return {
+                    key: release.UPC,
+                    colour: release.albumArt.asset.metadata.palette.muted
+                        .background,
+                    title: release.title,
+                };
+            }),
         );
     }, []);
-
-
-
 
     return (
         <main ref={mainRef}>
             <div
                 className="noisyBG"
                 style={{
-                    backgroundColor: !albumMetadata.find(i => i.key === currentSelection) ? '#000' : albumMetadata.find(i => i.key === currentSelection)?.colour
+                    backgroundColor: !albumMetadata.find(
+                        (i) => i.key === currentSelection,
+                    )
+                        ? "#000"
+                        : albumMetadata.find((i) => i.key === currentSelection)
+                              ?.colour,
                 }}
             ></div>
-            <div className="splashBG splashContainer" onMouseMove={mouseMoveHandle}>
+            <div
+                className="splashBG splashContainer"
+                onMouseMove={mouseMoveHandle}
+            >
                 <div className="leftList">
-                    <div className="listContainer shit" data-parallax-scale={0.2}>
+                    <div
+                        className="listContainer shit"
+                        data-parallax-scale={0.2}
+                    >
                         <div className="titleBar">
                             <h1>Spencer Raymond</h1>
                             <div className="socialLinks">
                                 {links.map((link, i) => (
                                     <div key={i} className="social">
-                                        <OutboundLink href={link.url}>{link.name}</OutboundLink>
+                                        <a href={link.url}>{link.name}</a>
                                     </div>
                                 ))}
                                 <div className="social">
@@ -201,11 +253,29 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
                     <div className="rightShow">
                         <div>
                             <div className="showContainer">
-                                <div className="imageDiv shit" data-parallax-scale={1}>
-                                    {albumArtworks.find(artwork => artwork.key === currentSelection)}
-                                    <div className="headingDiv shit" data-parallax-scale={2}>
+                                <div
+                                    className="imageDiv shit"
+                                    data-parallax-scale={1}
+                                >
+                                    {albumArtworks.find(
+                                        (artwork) =>
+                                            artwork.key === currentSelection,
+                                    )}
+                                    <div
+                                        className="headingDiv shit"
+                                        data-parallax-scale={2}
+                                    >
                                         <h3 className="showText">
-                                            {!albumMetadata.find(i => i.key === currentSelection) ? '' : albumMetadata.find(i => i.key === currentSelection)?.title}
+                                            {!albumMetadata.find(
+                                                (i) =>
+                                                    i.key === currentSelection,
+                                            )
+                                                ? ""
+                                                : albumMetadata.find(
+                                                      (i) =>
+                                                          i.key ===
+                                                          currentSelection,
+                                                  )?.title}
                                         </h3>
                                     </div>
                                 </div>
@@ -214,37 +284,42 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
                     </div>
                 )}
             </div>
-        </main >
+        </main>
     );
 };
 
 export const query = graphql`
-   query ReleaseQuery {
-      allSanityRelease {
-         nodes {
-            Active
-            title
-            releaseDate
-            link
-            UPC
-            slug {
-               current
-            }
-            albumArt {
-               asset {
-                  gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1000, height: 1000)
-                  metadata {
-                     palette {
-                        muted {
-                           background
+    query ReleaseQuery {
+        allSanityRelease {
+            nodes {
+                Active
+                title
+                releaseDate
+                link
+                UPC
+                slug {
+                    current
+                }
+                albumArt {
+                    asset {
+                        gatsbyImageData(
+                            layout: CONSTRAINED
+                            placeholder: BLURRED
+                            width: 1000
+                            height: 1000
+                        )
+                        metadata {
+                            palette {
+                                muted {
+                                    background
+                                }
+                            }
                         }
-                     }
-                  }
-               }
+                    }
+                }
             }
-         }
-      }
-   }
+        }
+    }
 `;
 
 export default IndexPage;
