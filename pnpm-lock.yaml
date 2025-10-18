@@ -26,6 +26,9 @@ importers:
       gatsby-plugin-image:
         specifier: ^3.13.1
         version: 3.14.0(@babel/core@7.25.2)(gatsby-plugin-sharp@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(graphql@16.9.0))(gatsby-source-filesystem@5.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      gatsby-plugin-posthog:
+        specifier: ^1.0.1
+        version: 1.0.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-plugin-sass:
         specifier: ^6.13.1
         version: 6.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(sass@1.86.0)(webpack@5.93.0(esbuild@0.24.2))
@@ -4046,6 +4049,13 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
+
+  gatsby-plugin-posthog@1.0.1:
+    resolution: {integrity: sha512-RIyDTj/XcMvmV6Vs6HJa8zQFGcQr52LcS4iD76g5WfFB705hFOAPchIISFoFMQd3qN1n3m4jUinhA/uuhN43Qg==}
+    peerDependencies:
+      gatsby: ^2.0.0
+      react: ^16.4.2
+      react-dom: ^16.4.2
 
   gatsby-plugin-sass@6.14.0:
     resolution: {integrity: sha512-3AirLeSpzGGqKDZNAGB33nfPXzPuQ6hGv3bYKhEeWMTapDAdaiF2BKLDSgcX+Dx30m2x8ZMlrDH3Krvsl5I5Vw==}
@@ -12309,6 +12319,13 @@ snapshots:
       - encoding
       - graphql
       - supports-color
+
+  gatsby-plugin-posthog@1.0.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.25.0
+      gatsby: 5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   gatsby-plugin-sass@6.14.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(esbuild@0.24.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.25.0)(typescript@5.5.4))(sass@1.86.0)(webpack@5.93.0(esbuild@0.24.2)):
     dependencies:

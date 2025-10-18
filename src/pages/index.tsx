@@ -10,215 +10,220 @@ import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 //head gatsby stuff
 export function Head() {
-   const { title, description } = useSiteMetadata();
-   return (
-      <>
-         <title>{title}</title>
-         <meta name="description" content={description} />
-         <meta name="keywords" content="pop, music, art, artist, alternative, electronic, country, indie, acoustic" />
-         <meta name="robots" content="index, follow" />
-         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-         <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
-         <meta name="language" content="English" />
-         <meta name="revisit-nafter" content="50 days" />
-         {/*<!-- Open Graph / Facebook -->*/}
-         <meta property="og:type" content="website" />
-         <meta property="og:url" content={`https://spencerraymon.de`} />
-         <meta property="og:title" content={title} />
-         <meta property="og:description" content={description} />
-         <meta property="og:image" content={'https://spencerraymon.de' + amtpo} />
-         {/* <!-- Twitter --> */}
-         <meta property="twitter:card" content="summary_large_image" />
-         <meta property="twitter:url" content={'https://spencerraymon.de'} />
-         <meta property="twitter:title" content={title} />
-         <meta property="twitter:description" content={description} />
-         <meta property="twitter:image" content={'https://spencerraymon.de' + amtpo}></meta>
-         <html lang="en" />
-      </>
-   );
+    const { title, description } = useSiteMetadata();
+    return (
+        <>
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta name="keywords" content="pop, music, art, artist, alternative, electronic, country, indie, acoustic" />
+            <meta name="robots" content="index, follow" />
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
+            <meta name="language" content="English" />
+            <meta name="revisit-nafter" content="50 days" />
+            {/*<!-- Open Graph / Facebook -->*/}
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={`https://spencerraymon.de`} />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:image" content={'https://spencerraymon.de' + amtpo} />
+            {/* <!-- Twitter --> */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content={'https://spencerraymon.de'} />
+            <meta property="twitter:title" content={title} />
+            <meta property="twitter:description" content={description} />
+            <meta property="twitter:image" content={'https://spencerraymon.de' + amtpo}></meta>
+            <html lang="en" />
+        </>
+    );
 }
 
 export type Release = {
-   title: string;
-   UPC: string;
-   albumArt: {
-      asset: {
-         gatsbyImageData: IGatsbyImageData;
-         metadata: {
-            palette: {
-               muted: {
-                  background: string;
-               };
+    Active: boolean;
+    title: string;
+    UPC: string;
+    albumArt: {
+        asset: {
+            gatsbyImageData: IGatsbyImageData;
+            metadata: {
+                palette: {
+                    muted: {
+                        background: string;
+                    };
+                };
             };
-         };
-      };
-   };
-   link: string;
-   releaseDate: string;
-   slug: {
-      current: string;
-   };
+        };
+    };
+    link: string;
+    releaseDate: string;
+    slug: {
+        current: string;
+    };
 };
 
 //for leftList
 const ListItem = (props: { children: any; onMouseOver: () => void }) => {
-   return (
-      <div className="listLink" onMouseOver={props.onMouseOver}>
-         {props.children}
-      </div>
-   );
+    return (
+        <div className="listLink" onMouseOver={props.onMouseOver}>
+            {props.children}
+        </div>
+    );
 };
 
 const parseReleaseDate = (input: string): string => {
-   const temp = input.split('-');
+    const temp = input.split('-');
 
-   return `${temp[0]}/${temp[1]}/${temp[2]}`;
+    return `${temp[0]}/${temp[1]}/${temp[2]}`;
 };
 
 //main function
 const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
-   const [isMobile, setIsMobile] = useState(false);
-   const [currentSelection, setCurrentSelection] = useState(0);
-   const [albumArtworks, setAlbumArtworks] = useState<ReactElement[]>([]);
-   const [albumLinks, setAlbumLinks] = useState<ReactElement[]>([]);
-   const [albumMetadata, setAlbumMetadata] = useState<{ colour: string; title: string }[]>([]);
+    const [isMobile, setIsMobile] = useState(false);
+    const [currentSelection, setCurrentSelection] = useState(data.allSanityRelease.nodes[0].UPC);
+    const [albumArtworks, setAlbumArtworks] = useState<ReactElement[]>([]);
+    const [albumLinks, setAlbumLinks] = useState<ReactElement[]>([]);
+    const [albumMetadata, setAlbumMetadata] = useState<{ key: string; colour: string; title: string }[]>([]);
 
-   useEffect(() => {
-      const mobileMediaQuery = matchMedia('(max-width: 800px)');
+    useEffect(() => {
+        const mobileMediaQuery = matchMedia('(max-width: 800px)');
 
-      const listener = () => {
-         setIsMobile(mobileMediaQuery.matches);
-      };
+        const listener = () => {
+            setIsMobile(mobileMediaQuery.matches);
+        };
 
-      mobileMediaQuery.addEventListener('change', listener);
+        mobileMediaQuery.addEventListener('change', listener);
 
-      listener();
+        listener();
 
-      return () => mobileMediaQuery.removeEventListener('change', listener);
-   }, []);
+        return () => mobileMediaQuery.removeEventListener('change', listener);
+    }, []);
 
-   const mainRef = useRef<HTMLDivElement>(null);
+    const mainRef = useRef<HTMLDivElement>(null);
 
-   const mouseMoveHandle = useCallback(
-      (e: any) => {
-         if (!mainRef.current) {
-            return;
-         }
+    const mouseMoveHandle = useCallback(
+        (e: any) => {
+            if (!mainRef.current) {
+                return;
+            }
 
-         if (!isMobile) {
-            const size = (Math.max(innerWidth, innerHeight) / 50) * -1;
-            const pageX = (e.clientX - window.innerWidth / 2) / size,
-               pageY = (e.clientY - window.innerHeight / 2) / size;
+            if (!isMobile) {
+                const size = (Math.max(innerWidth, innerHeight) / 50) * -1;
+                const pageX = (e.clientX - window.innerWidth / 2) / size,
+                    pageY = (e.clientY - window.innerHeight / 2) / size;
 
-            mainRef.current.querySelectorAll('.shit').forEach((element) => {
-               const scale = +(element.getAttribute('data-parallax-scale') ?? '1');
+                mainRef.current.querySelectorAll('.shit').forEach((element) => {
+                    const scale = +(element.getAttribute('data-parallax-scale') ?? '1');
 
-               (element as HTMLElement).style.transform = `translateX(${pageX * scale}px) translateY(${
-                  pageY * scale
-               }px)`;
-            });
-         }
-      },
-      [isMobile]
-   );
+                    (element as HTMLElement).style.transform = `translateX(${pageX * scale}px) translateY(${pageY * scale
+                        }px)`;
+                });
+            }
+        },
+        [isMobile]
+    );
 
-   useEffect(() => {
-      const releases = data.allSanityRelease.nodes as unknown as Release[];
+    useEffect(() => {
+        const releases = data.allSanityRelease.nodes as unknown as Release[];
 
-      releases.sort((a, b) => {
-         return new Date(a.releaseDate) < new Date(b.releaseDate) ? 1 : -1;
-      });
+        releases.sort((a, b) => {
+            return new Date(a.releaseDate) < new Date(b.releaseDate) ? 1 : -1;
+        });
 
-      setAlbumArtworks(
-         releases.map((release) => {
-            return (
-               <GatsbyImage
-                  alt={`${release.title}`}
-                  image={release.albumArt.asset.gatsbyImageData}
-                  key={release.UPC}
-                  className={'showImage'}
-               />
-            );
-         })
-      );
-      setAlbumLinks(
-         releases.map((release, i) => {
-            return (
-               <OutboundLink
-                  key={release.UPC}
-                  href={'https://link.spencerraymon.de/' + release.slug.current}
-                  className="listItem"
-               >
-                  <ListItem onMouseOver={() => setCurrentSelection(i)}>
-                     {release.title}
-                     <br />
-                     <span className="italics listLink">{parseReleaseDate(release.releaseDate)}</span>
-                  </ListItem>
-               </OutboundLink>
-            );
-         })
-      );
-      setAlbumMetadata(
-         releases.map((release) => {
-            return { colour: release.albumArt.asset.metadata.palette.muted.background, title: release.title };
-         })
-      );
-   }, []);
+        setAlbumArtworks(
+            releases.map((release) => {
+                return release.Active ? (
+                    <GatsbyImage
+                        alt={`${release.title}`}
+                        image={release.albumArt.asset.gatsbyImageData}
+                        key={release.UPC}
+                        className={'showImage'}
+                    />
+                ) : <></>;
+            }).filter(e => e.key)
+        );
+        setAlbumLinks(
+            releases.map((release, i) => {
+                return release.Active ? (
+                    <OutboundLink
+                        key={release.UPC}
+                        href={'https://link.spencerraymon.de/' + release.slug.current}
+                        className="listItem"
+                    >
+                        <ListItem onMouseOver={() => setCurrentSelection(release.UPC)}>
+                            {release.title}
+                            <br />
+                            <span className="italics listLink">{parseReleaseDate(release.releaseDate)}</span>
+                        </ListItem>
+                    </OutboundLink>
+                ) : <></>;
+            }).filter(e => e.key)
+        );
+        setAlbumMetadata(
+            releases.map((release) => {
+                return { key: release.UPC, colour: release.albumArt.asset.metadata.palette.muted.background, title: release.title };
+            })
+        );
+        console.log(albumArtworks)
+    }, []);
 
-   return (
-      <main ref={mainRef}>
-         <div
-            className="noisyBG"
-            style={{
-               backgroundColor: !albumMetadata[currentSelection] ? '#000' : albumMetadata[currentSelection].colour,
-            }}
-         ></div>
-         <div className="splashBG splashContainer" onMouseMove={mouseMoveHandle}>
-            <div className="leftList">
-               <div className="listContainer shit" data-parallax-scale={0.2}>
-                  <div className="titleBar">
-                     <h1>Spencer Raymond</h1>
-                     <div className="socialLinks">
-                        {links.map((link, i) => (
-                           <div key={i} className="social">
-                              <OutboundLink href={link.url}>{link.name}</OutboundLink>
-                           </div>
-                        ))}
-                        <div className="social">
-                           <Link to="/presskit">Press Kit</Link>
+
+
+
+    return (
+        <main ref={mainRef}>
+            <div
+                className="noisyBG"
+                style={{
+                    backgroundColor: !albumMetadata.find(i => i.key === currentSelection) ? '#000' : albumMetadata.find(i => i.key === currentSelection)?.colour
+                }}
+            ></div>
+            <div className="splashBG splashContainer" onMouseMove={mouseMoveHandle}>
+                <div className="leftList">
+                    <div className="listContainer shit" data-parallax-scale={0.2}>
+                        <div className="titleBar">
+                            <h1>Spencer Raymond</h1>
+                            <div className="socialLinks">
+                                {links.map((link, i) => (
+                                    <div key={i} className="social">
+                                        <OutboundLink href={link.url}>{link.name}</OutboundLink>
+                                    </div>
+                                ))}
+                                <div className="social">
+                                    <Link to="/presskit">Press Kit</Link>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  {albumLinks}
-               </div>
+                        {albumLinks}
+                    </div>
+                </div>
+                {isMobile ? (
+                    <></>
+                ) : (
+                    <div className="rightShow">
+                        <div>
+                            <div className="showContainer">
+                                <div className="imageDiv shit" data-parallax-scale={1}>
+                                    {albumArtworks.find(artwork => artwork.key === currentSelection)}
+                                    <div className="headingDiv shit" data-parallax-scale={2}>
+                                        <h3 className="showText">
+                                            {!albumMetadata.find(i => i.key === currentSelection) ? '' : albumMetadata.find(i => i.key === currentSelection)?.title}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
-            {isMobile ? (
-               <></>
-            ) : (
-               <div className="rightShow">
-                  <div>
-                     <div className="showContainer">
-                        <div className="imageDiv shit" data-parallax-scale={1}>
-                           {albumArtworks[currentSelection]}
-                           <div className="headingDiv shit" data-parallax-scale={2}>
-                              <h3 className="showText">
-                                 {!albumMetadata[currentSelection] ? '' : albumMetadata[currentSelection].title}
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            )}
-         </div>
-      </main>
-   );
+        </main >
+    );
 };
 
 export const query = graphql`
    query ReleaseQuery {
       allSanityRelease {
          nodes {
+            Active
             title
             releaseDate
             link
