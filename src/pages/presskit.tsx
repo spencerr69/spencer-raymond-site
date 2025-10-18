@@ -5,7 +5,6 @@ import '../styles/presskit.scss';
 import favicon from '../images/favicon.png';
 import amtpo from '../images/amtpo.jpg';
 import { graphql, Link } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { PortableText } from '@portabletext/react';
 import { links } from '../consts/vars';
 import { Release } from './index';
@@ -81,7 +80,7 @@ const PressKit = ({ data }: { data: any }) => {
                                 <div className="socialLinks linksPK">
                                     {links.map((link, i) => (
                                         <div key={i} className="social">
-                                            <OutboundLink href={link.url}>{link.name}</OutboundLink>
+                                            <a href={link.url}>{link.name}</a>
                                         </div>
                                     ))}
                                 </div>
