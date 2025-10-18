@@ -163,7 +163,6 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
                 return { key: release.UPC, colour: release.albumArt.asset.metadata.palette.muted.background, title: release.title };
             })
         );
-        console.log(albumArtworks)
     }, []);
 
 
