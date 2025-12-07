@@ -53,9 +53,9 @@ export function Head() {
 }
 
 export type Release = {
-    Active: boolean;
+    active: boolean;
     title: string;
-    UPC: string;
+    upc: string;
     albumArt: {
         asset: {
             gatsbyImageData: IGatsbyImageData;
@@ -94,7 +94,7 @@ const parseReleaseDate = (input: string): string => {
 const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
     const [isMobile, setIsMobile] = useState(false);
     const [currentSelection, setCurrentSelection] = useState(
-        data.allSanityRelease.nodes[0].UPC,
+        data.allSanityRelease.nodes[0].upc,
     );
     const [albumArtworks, setAlbumArtworks] = useState<ReactElement[]>([]);
     const [albumLinks, setAlbumLinks] = useState<ReactElement[]>([]);
@@ -154,11 +154,11 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
         setAlbumArtworks(
             releases
                 .map((release) => {
-                    return release.Active ? (
+                    return release.active ? (
                         <GatsbyImage
                             alt={`${release.title}`}
                             image={release.albumArt.asset.gatsbyImageData}
-                            key={release.UPC}
+                            key={release.upc}
                             className={"showImage"}
                         />
                     ) : (
@@ -170,9 +170,9 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
         setAlbumLinks(
             releases
                 .map((release, i) => {
-                    return release.Active ? (
+                    return release.active ? (
                         <a
-                            key={release.UPC}
+                            key={release.upc}
                             href={
                                 "https://link.spencerraymon.de/" +
                                 release.slug.current
@@ -181,7 +181,7 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
                         >
                             <ListItem
                                 onMouseOver={() =>
-                                    setCurrentSelection(release.UPC)
+                                    setCurrentSelection(release.upc)
                                 }
                             >
                                 {release.title}
@@ -200,7 +200,7 @@ const IndexPage = ({ data }: PageProps<Queries.ReleaseQueryQuery>) => {
         setAlbumMetadata(
             releases.map((release) => {
                 return {
-                    key: release.UPC,
+                    key: release.upc,
                     colour: release.albumArt.asset.metadata.palette.muted
                         .background,
                     title: release.title,
@@ -292,11 +292,11 @@ export const query = graphql`
     query ReleaseQuery {
         allSanityRelease {
             nodes {
-                Active
+                active
                 title
                 releaseDate
                 link
-                UPC
+                upc
                 slug {
                     current
                 }
